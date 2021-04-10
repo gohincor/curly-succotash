@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">projetFinal</string>
+    <string name="txtView_mainDistanceEseo">Distance de ton école préférée</string>
+    <string name="txtView_splashNom">Développé par Corentin GOHIN</string>
+    <string name="txtView_splashAnnee">2021</string>
+    <string name="TxtView_mainHistoLocalisation">Historique des localisations</string>
+    <string name="txtView_localisationCalculDistance">Calculer la distance</string>
+    <string name="txtView_localisation_txtDistance">Distance de l\'ESEO</string>
+    <string name="txt_elementListe">Element de la liste</string>
+    <string name="nomVueParam">Paramètre</string>
+</resources>
