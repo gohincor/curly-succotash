@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.splash.splashActivity">
+    tools:context=".ui.splash.splashActivity"
+    android:background="#454947">
 
     <ImageView
         android:id="@+id/splashIlogo"
@@ -15,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/logo_child" />
+        app:srcCompat="@drawable/logo_child"
+        app:tint="@color/color_white"/>
 
     <TextView
         android:id="@+id/splashTxtNom"
@@ -23,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtView_splashNom"
         android:textSize="@dimen/TxtViewSize"
+        android:textColor="@color/color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtView_splashAnnee"
         android:textSize="@dimen/TxtViewSize"
+        android:textColor="@color/color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

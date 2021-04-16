@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final Project</string>
+    <string name="txtView_mainDistanceEseo">Distance from ESEO school</string>
+    <string name="txtView_splashNom">By Corentin GOHIN</string>
+    <string name="txtView_splashAnnee">2021</string>
+    <string name="TxtView_mainHistoLocalisation">Location history</string>
+    <string name="txtView_localisationCalculDistance">Calculate the distance</string>
+    <string name="txtView_localisation_txtDistance">Distance from the ESEO</string>
+    <string name="txt_elementListe">Item of the list</string>
+    <string name="nomVueParam">Settings</string>
+    <string name="txt_stringListe">A location</string>
+    <string name="localisationHistory_title">History Location</string>
+    <string name="localisation_title">Location</string>
+    <string name="settingsItem_paramApp">Application Settings</string>
+    <string name="settingsItem_paramLocalisation">Location Settings</string>
+    <string name="settingsItem_posEseo">ESEO position</string>
+    <string name="settingsItem_siteEseo">ESEO website </string>
+    <string name="settingsItem_email">Mail</string>
+    <string name="localisationActivity_allowLocation">Authorize location ?</string>
+    <string name="localisationActivity_msgLocation">This authorisation is necessary for the proper functionning of this app</string>
+    <string name="localisationActivity_validate">Validate</string>
+    <string name="localisationActivity_quit">Quit</string>
+</resources>

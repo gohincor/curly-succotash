@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.projetfinal.BuildConfig
 import com.example.projetfinal.R
 import com.example.projetfinal.data.SettingsItem
 import com.example.projetfinal.databinding.ActivitySettingsBinding
@@ -20,7 +21,10 @@ class SettingsActivity : AppCompatActivity() {
             return Intent(context, SettingsActivity::class.java) // retourne une intent
         }
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -35,29 +39,29 @@ class SettingsActivity : AppCompatActivity() {
         }
         binding.settingsRecycleView.layoutManager = LinearLayoutManager(this) // type linéaire
         binding.settingsRecycleView.adapter = SettingsAdapter(arrayOf(
-                SettingsItem("Paramètre de l'application", R.drawable.logo_settings) {
-                    val targetIntent = Intent().apply {
-                        action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                    }
-                    startActivity(targetIntent);
+                SettingsItem(getString(R.string.settingsItem_paramApp), R.drawable.logo_settings) {
+                    startActivity(
+                            Intent(
+                                    android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                    Uri.fromParts("package" , BuildConfig.APPLICATION_ID,null)))
                 },
-                SettingsItem("Paramètre de localisation", R.drawable.logo_location) {
+                SettingsItem(getString(R.string.settingsItem_paramLocalisation), R.drawable.logo_location) {
                     val targetIntent = Intent().apply {
                         action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
                     }
                     startActivity(targetIntent);
                 },
-                SettingsItem("Position de l'ESEO", R.drawable.settings) {
+                SettingsItem(getString(R.string.settingsItem_posEseo), R.drawable.logo_location_searching) {
                     val targetIntent = Intent().apply {
                         action = Settings.ACTION_SETTINGS
                     }
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:47.472822,-0.5621756")));
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:47.49313,-0.55132")));
                 },
-                SettingsItem("Site de l'ESEO", R.drawable.eseo) {
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://www.my.eseo.fr")));
+                SettingsItem(getString(R.string.settingsItem_siteEseo), R.drawable.eseo) {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://my.eseo.fr")));
                 },
-                SettingsItem("Email", R.drawable.eseo) {
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://www.my.eseo.fr")));
+                SettingsItem(getString(R.string.settingsItem_email), R.drawable.logo_mail ) {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("mailto:corentin.gohin@reseau.eseo.fr")));
                 }
 
         ))
