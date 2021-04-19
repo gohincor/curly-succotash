@@ -8,15 +8,18 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetfinal.R
-import com.example.projetfinal.data.SettingsItem
+import com.example.projetfinal.ui.settings.SettingsItem
 
 class SettingsAdapter (private val settingsItemList: Array<SettingsItem>, private val onClick: ((selectedDevice: SettingsItem) -> Unit)? = null) : RecyclerView.Adapter<SettingsAdapter.ViewHolder>(){
 
     // Comment s'affiche ma vue
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun showItem(device: SettingsItem, onClick: ((selectedDevice: SettingsItem) -> Unit)? = null) {
+            // texte
             itemView.findViewById<TextView>(R.id.itemSettings_texte).text = device.name
+            // image
             itemView.findViewById<ImageView>(R.id.itemSettings_image).setImageResource(device.icon)
+            // Action du clic
             itemView.findViewById<ConstraintLayout>(R.id.itemSetting_constraint).setOnClickListener{
                 device.onClick()
             }

@@ -12,15 +12,22 @@ class LocalPreferences private constructor(context: Context) {
     fun getSaveStringValue(): String? {
         return sharedPreferences.getString("saveStringValue", null)
     }
+    // Ajouter à l'historique
     fun addToHistory(newEntry: String){
         val history = this.getHistory()
         history?.add(newEntry)
         sharedPreferences.edit().putStringSet("histories", history).apply()
     }
-
+    // accéder à l'historique
     fun getHistory(): MutableSet<String>? {
         return sharedPreferences.getStringSet("histories", HashSet<String>())
     }
+    // Vider l'historique
+    fun clearHistory() {
+        val history = this.getHistory()
+        history?.clear()
+    }
+
     companion object {
         private var INSTANCE: LocalPreferences? = null
 

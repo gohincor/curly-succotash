@@ -19,6 +19,11 @@
     <string name="settingsItem_email">Mail</string>
     <string name="localisationActivity_allowLocation">Authorize location ?</string>
     <string name="localisationActivity_msgLocation">This authorisation is necessary for the proper functionning of this app</string>
-    <string name="localisationActivity_validate">Validate</string>
+    <string name="localisationActivity_validate">Authorize</string>
     <string name="localisationActivity_quit">Quit</string>
+    <string name="txtView_localisationHistoryVide">Empty</string>
+    <string name="locationActivate">Activate location?</string>
+    <string name="msgActivationLocation">Activate location is necesarry to know your position</string>
+    <string name="activationLocation">Activer la localisation</string>
+    <string name="refuseActivateLocation">Refuse</string>
 </resources>

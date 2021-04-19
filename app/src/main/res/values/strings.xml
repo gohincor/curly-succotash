@@ -18,6 +18,11 @@
     <string name="settingsItem_email">Email</string>
     <string name="localisationActivity_allowLocation">Autoriser la localisation ?</string>
     <string name="localisationActivity_msgLocation">Cette autorisation est nécessaire au bon fonctionnement de l\'application</string>
-    <string name="localisationActivity_validate">Valider</string>
-    <string name="localisationActivity_quit">Quitter</string>
+    <string name="localisationActivity_validate">Autoriser</string>
+    <string name="localisationActivity_quit">Refuser</string>
+    <string name="txtView_localisationHistoryVide">Vider</string>
+    <string name="locationActivate">Veuillez activer le localisation</string>
+    <string name="msgActivationLocation">La localisation est nécessaire pour vous localiser</string>
+    <string name="activationLocation">Activer la localisation</string>
+    <string name="refuseActivateLocation">Refuser</string>
 </resources>

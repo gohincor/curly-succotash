@@ -1,9 +1,10 @@
 package com.example.projetfinal.ui.localisationHistory
 
+import LocalPreferences
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projetfinal.R
 import com.example.projetfinal.databinding.ActivityLocalisationHistoryBinding
@@ -24,7 +25,7 @@ class LocalisationHistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_localisation_history)
-
+        /// Affiche ActionBar avec nom de la vue
         supportActionBar?.apply {
             setTitle(getString(R.string.localisationHistory_title))
             setDisplayHomeAsUpEnabled(true)
@@ -32,9 +33,15 @@ class LocalisationHistoryActivity : AppCompatActivity() {
         }
         binding = ActivityLocalisationHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        /// Vider l'historique
+        binding.localisationHistoryBtnVider.setOnClickListener {
+            LocalPreferences.getInstance(this).clearHistory()
+            /// Recharger le RecyclerView pour actualiser les données
+            binding.localisationHistoryRecycleView.adapter = LocationHistoryAdapter(LocalPreferences.getInstance(this).getHistory())
+        }
+        // Recycler view
         binding.localisationHistoryRecycleView.layoutManager = LinearLayoutManager(this) // type linéaire
-        binding.localisationHistoryRecycleView.adapter = LocationHistoryAdapter(LocalPreferences.getInstance(this).getHistory())
+        binding.localisationHistoryRecycleView.adapter = LocationHistoryAdapter(LocalPreferences.getInstance(this).getHistory()) // affichage historique
 
     }
 }
